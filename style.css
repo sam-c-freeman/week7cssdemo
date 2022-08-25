@@ -1,0 +1,82 @@
+/* Note to self: make sure the quotes go around the whole row and not each item */
+
+body{
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr .5fr 3fr .5fr;
+    grid-template-areas: 
+       "header header header" 
+       "nav nav nav"
+       "aside article1 article2"
+       "footer footer footer";
+}
+
+header{
+    text-align: center;
+    background-color: #021C1E;
+    grid-area: header;
+    color: white;
+}
+
+nav{
+    background-color: #004445;
+    color: white;
+    grid-area: nav;
+    text-align: center;
+}
+
+aside{
+    background-color: #2C7873;
+    color: white;
+    grid-area: aside;
+}
+#article1{
+    background-color: #6FB98F;
+    color: white;
+    grid-area: article1;
+
+}
+
+#article2{
+    background-color: #2C7873;
+    color: white;
+    grid-area: article2;
+}
+
+footer{
+    background-color: #004445;
+    color: white;
+    grid-area: footer;
+    text-align:center;
+}
+
+h3{
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 550px){
+.container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .5fr 2fr 2fr 1fr .5fr;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "article1"
+    "article2"
+    "aside"
+    "footer";
+    }
+
+aside{
+    background-color: #6FB98F;
+    color: white;
+}
+
+
+}
+    
