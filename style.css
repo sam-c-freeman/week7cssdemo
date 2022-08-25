@@ -4,11 +4,20 @@ body{
     margin: 0;
 }
 
+/* The below code sets up the grid.  After deciding how many rows and 
+columns you want, you set them up by typing a size for each column 
+(ie: mine has 3 columns of size 1fr, 2fr, 2fr ) */
+
 .container{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 2fr 2fr;
     grid-template-rows: 1fr .5fr 3fr .5fr;
+
+/* grid template areas assigns what you want in each column and row.
+You later assign them again in the ruleset for the corresponding
+area */
+
     grid-template-areas: 
        "header header header" 
        "nav nav nav"
@@ -19,7 +28,8 @@ body{
 header{
     text-align: center;
     background-color: #021C1E;
-    grid-area: header;
+    grid-area: header;  
+    /* example of how to assign the area above */
     color: white;
 }
 
@@ -59,6 +69,10 @@ h3{
     margin-left: 10px;
 }
 
+/* For the media query you likely need to re-assign the areas based
+on how they might look better in mobile view.
+Notice I now have only one column and instead 6 rows!! */
+
 @media only screen and (max-width: 550px){
 .container{
     grid-template-columns: 1fr;
@@ -76,6 +90,8 @@ aside{
     background-color: #6FB98F;
     color: white;
 }
+
+/* I decided to change the color of one area so it was easier to see! */
 
 
 }
